@@ -12,18 +12,35 @@ const usePokemonInfo = () => {
       firstNinePokemon.results.forEach(({ url }) => {
         pokemonFetchUrls.push(url);
       });
-    };
+    }
 
     const fetchPokemonData = async () => {
-      const responses = await Promise.all(pokemonFetchUrls.map(url => fetch(url)));
-      const data = await Promise.all(responses.map(response => response.json()));
-      setPokemonInfo(data);
+      try {
+        const responses = await Promise.all(
+          pokemonFetchUrls.map((url) => fetch(url))
+        );
+        const data = await Promise.all(
+          responses.map(async (response) => {
+            const { name, abilities, sprites, types, weight } = await response.json();
+            return {
+              name,
+              abilities,
+              image: sprites.front_default,
+              types,
+              weight,
+            };
+          })
+        );
+        setPokemonInfo(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchPokemonData();
   }, [firstNinePokemon]);
 
   return pokemonInfo;
-}
+};
 
 export default usePokemonInfo;

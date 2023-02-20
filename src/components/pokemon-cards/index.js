@@ -5,28 +5,35 @@ import { PokemonCardsFlexContainer } from './styles';
 
 const PokemonCards = () => {
   const pokemonInfo = usePokemonInfo();
+  const pokemonFilter = '';
   return (
     <PokemonCardsFlexContainer>
       {pokemonInfo.map(
         ({
-          sprites: { front_default },
+          image,
           name,
           types,
           weight,
           abilities,
-        }) => (
-          <PokemonCard
-            name={name}
-            image={front_default}
-            types={types}
-            weight={weight}
-            randomAbility={
-              abilities[
-                Math.floor(Math.random() * abilities.length)
-              ].ability.name
-            }
-          />
-        )
+        }) => {
+          if (name.toLowerCase().includes(pokemonFilter.toLowerCase())) {
+            return (
+              <PokemonCard
+                key={name}
+                name={name}
+                image={image}
+                types={types}
+                weight={weight}
+                randomAbility={
+                  abilities[
+                    Math.floor(Math.random() * abilities.length)
+                  ].ability.name
+                }
+              />
+            );
+          }
+          return null;
+        }
       )}
     </PokemonCardsFlexContainer>
   );

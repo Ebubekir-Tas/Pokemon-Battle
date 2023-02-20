@@ -10,8 +10,7 @@ Decisions along the way:
 3: PropTypes in absence of TypeScript
 
 For sake of time didn't include:
-- loading state for fetches (loading, success, error, etc)
-- error handling for fetching API
+- loading state for fetches (loading, success, onError, etc)
 - unit tests
 - TypeScript
 - Linter
