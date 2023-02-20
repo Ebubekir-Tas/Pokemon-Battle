@@ -16,7 +16,7 @@ Decisions along the way:
   - App is small, not going to be built upon, pure convenience
 
 For sake of time didn't include:
-- More than options than pokemon 1-9
+- More than options than pokemon 1-9 (i.e 11-19 not available)
    - Would simply require a parameter for the urls to fetch from and evolution chains from the pokemon API for the pokemon battle logic
 - loading state for fetches (loading, success, onError, etc)
 - unit tests
