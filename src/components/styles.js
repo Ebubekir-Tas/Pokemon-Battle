@@ -14,6 +14,7 @@ export const PokemonInfoContainer = styled(Box)({
 
 export const PokemonName = styled(Typography)({
   textAlign: 'left',
+  fontWeight: 600
 });
 
 export const CardContainer = styled(Box)(({ theme }) => ({
