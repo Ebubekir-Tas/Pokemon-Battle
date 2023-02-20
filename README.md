@@ -12,6 +12,8 @@ Decisions along the way:
 3: PropTypes in absence of TypeScript
 
 For sake of time didn't include:
+- More than options than pokemon 1-9.
+   - Would simply require a parameter for the urls to fetch from and evolution chains from the pokemon API for the pokemon battle logic
 - loading state for fetches (loading, success, onError, etc)
 - unit tests
 - TypeScript
