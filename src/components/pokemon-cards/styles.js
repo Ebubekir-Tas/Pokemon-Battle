@@ -5,6 +5,9 @@ export const StyledCard = styled(Card)({
   padding: 16,
   width: 200,
   height: 225,
+  '&:hover': {
+    cursor: 'pointer',
+  }
 });
 
 export const PokemonInfoContainer = styled(Box)({
