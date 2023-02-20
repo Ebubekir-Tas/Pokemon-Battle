@@ -14,24 +14,36 @@ export const PokemonInfoContainer = styled(Box)({
 
 export const PokemonName = styled(Typography)({
   textAlign: 'left',
-  fontWeight: 600
+  fontWeight: 600,
 });
 
 export const CardContainer = styled(Box)(({ theme }) => ({
   width: '30%',
-  justifyContent: 'center',
   display: 'flex',
   [theme.breakpoints.down('sm')]: {
     width: '100%',
-  }
+    justifyContent: 'center',
+  },
 }));
 
-export const PokemonCardsFlexContainer = styled(Box)(({theme}) => ({
+export const PokemonCardsFlexContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   gap: 16,
   placeContent: 'center',
   [theme.breakpoints.up('lg')]: {
     width: '75%',
-  }
+  },
+  [theme.breakpoints.up('sm')]: {
+    '& > :nth-child(3n-2)': {
+      justifyContent: 'flex-start',
+    },
+    '& > :nth-child(3n-1)': {
+      justifyContent: 'center',
+    },
+    '& > :nth-child(3n)': {
+      justifyContent: 'flex-end',
+    },
+  },
 }));
+  

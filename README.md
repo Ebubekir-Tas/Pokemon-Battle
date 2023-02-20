@@ -14,6 +14,8 @@ For sake of time didn't include:
 - error handling for fetching API
 - unit tests
 - TypeScript
+- Linter
+- etc.
 
 # Getting Started with Create React App
 

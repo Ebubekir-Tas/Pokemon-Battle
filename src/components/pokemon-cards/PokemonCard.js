@@ -11,22 +11,22 @@ const PokemonCard = ({ name, image, types, randomAbility, weight }) => {
 
   return (
     <CardContainer>
-    <StyledCard variant="outlined">
-      <PokemonName>{capitalizedName}</PokemonName>
-      <PokemonInfoContainer>
-      <img src={image} alt="pokemon_thumbnail" />
-      <Typography>
-        {namesOfTypes.map((typeName, index) => (
-          <React.Fragment key={typeName}>
-            {index > 0 && ', '}
-            <span style={{ color: typeColor(typeName) }}>{typeName}</span>
-          </React.Fragment>
-        ))}
-      </Typography>
-      <Typography>ability: {randomAbility}</Typography>
-      <Typography>weight: {weight}</Typography>
-      </PokemonInfoContainer>
-    </StyledCard>
+      <StyledCard variant="outlined">
+        <PokemonName>{capitalizedName}</PokemonName>
+        <PokemonInfoContainer>
+        <img src={image} alt="pokemon_thumbnail" />
+        <Typography>
+          {namesOfTypes.map((typeName, index) => (
+            <React.Fragment key={typeName}>
+              {index > 0 && ', '}
+              <span style={{ color: typeColor(typeName) }}>{typeName}</span>
+            </React.Fragment>
+          ))}
+        </Typography>
+        <Typography>ability: {randomAbility}</Typography>
+        <Typography>weight: {weight}</Typography>
+        </PokemonInfoContainer>
+      </StyledCard>
     </CardContainer>
   );
 };
