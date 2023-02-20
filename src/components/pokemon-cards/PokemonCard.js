@@ -22,8 +22,10 @@ const PokemonCard = ({ name, image, types, ability, weight, height, selectedPoke
 
   return (
     <CardContainer>
-      <StyledCard variant="outlined" onClick={handleCardClick} 
-      style={highlightSelectedCard}
+      <StyledCard
+        variant="outlined"
+        onClick={handleCardClick} 
+        style={highlightSelectedCard}
       >
         <PokemonName>{capitalizedName}</PokemonName>
         <PokemonInfoContainer>

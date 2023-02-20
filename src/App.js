@@ -10,16 +10,16 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-        <Header
-          pokemonFilter={pokemonFilter}
-          setPokemonFilter={setPokemonFilter}
-          selectedPokemon={selectedPokemon}
-        />
-        <PokemonCards
-          pokemonFilter={pokemonFilter}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-        />
+      <Header
+        pokemonFilter={pokemonFilter}
+        setPokemonFilter={setPokemonFilter}
+        selectedPokemon={selectedPokemon}
+      />
+      <PokemonCards
+        pokemonFilter={pokemonFilter}
+        selectedPokemon={selectedPokemon}
+        setSelectedPokemon={setSelectedPokemon}
+      />
     </div>
   );
 };
