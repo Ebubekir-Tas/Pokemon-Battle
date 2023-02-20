@@ -2,12 +2,13 @@ import React from 'react';
 import usePokemonInfo from '../../hooks/usePokemonInfo';
 import PokemonCard from './PokemonCard';
 import { PokemonCardsFlexContainer } from './styles';
+import PropTypes from "prop-types";
 
-const PokemonCards = () => {
+const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) => {
   const pokemonInfo = usePokemonInfo();
-  const pokemonFilter = '';
+
   return (
-    <PokemonCardsFlexContainer>
+    <PokemonCardsFlexContainer container spacing={{ xs: 1, md: 3 }}>
       {pokemonInfo.map(
         ({
           image,
@@ -15,6 +16,7 @@ const PokemonCards = () => {
           types,
           weight,
           abilities,
+          height
         }) => {
           if (name.toLowerCase().includes(pokemonFilter.toLowerCase())) {
             return (
@@ -24,15 +26,16 @@ const PokemonCards = () => {
                 image={image}
                 types={types}
                 weight={weight}
-                randomAbility={
-                  abilities[
-                    Math.floor(Math.random() * abilities.length)
-                  ].ability.name
+                height={height}
+                selectedPokemon={selectedPokemon}
+                setSelectedPokemon={setSelectedPokemon}
+                ability={
+                  abilities[0].ability.name
                 }
               />
             );
           }
-          return null;
+          return <></>;
         }
       )}
     </PokemonCardsFlexContainer>
@@ -40,3 +43,9 @@ const PokemonCards = () => {
 };
 
 export default PokemonCards;
+
+PokemonCards.propTypes = {
+  pokemonFilter: PropTypes.string.isRequired,
+  selectedPokemon: PropTypes.array.isRequired,
+  setSelectedPokemon: PropTypes.func.isRequired,
+};

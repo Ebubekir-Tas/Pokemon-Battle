@@ -21,13 +21,14 @@ const usePokemonInfo = () => {
         );
         const data = await Promise.all(
           responses.map(async (response) => {
-            const { name, abilities, sprites, types, weight } = await response.json();
+            const { name, abilities, sprites, types, weight, height } = await response.json();
             return {
               name,
               abilities,
               image: sprites.front_default,
               types,
               weight,
+              height,
             };
           })
         );

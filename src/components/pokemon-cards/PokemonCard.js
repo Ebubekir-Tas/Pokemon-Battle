@@ -4,14 +4,27 @@ import PropTypes from "prop-types";
 import { typeColor } from '../../utils/colorByPokemonType'
 import { PokemonInfoContainer, PokemonName, StyledCard, CardContainer } from './styles';
 
-const PokemonCard = ({ name, image, types, randomAbility, weight }) => {
+const PokemonCard = ({ name, image, types, ability, weight, height, selectedPokemon, setSelectedPokemon }) => {
   const namesOfTypes = types.map(type => type.type.name);
-
   const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+
+  const handleCardClick = () => {
+    const index = selectedPokemon.findIndex(pokemon => pokemon.name === name);
+    if (index !== -1) {
+      setSelectedPokemon(selectedPokemon.filter((_, i) => i !== index));
+    } else if (selectedPokemon.length < 2) {
+      setSelectedPokemon([...selectedPokemon, { name, type: types[0].type.name }]);
+    };
+  };
+
+  const isSelected = selectedPokemon.some(pokemon => pokemon.name === name);
+  const highlightSelectedCard = isSelected ? { boxShadow: '0 0 0 2px black, 0 0 0 5px gold' } : {};
 
   return (
     <CardContainer>
-      <StyledCard variant="outlined">
+      <StyledCard variant="outlined" onClick={handleCardClick} 
+      style={highlightSelectedCard}
+      >
         <PokemonName>{capitalizedName}</PokemonName>
         <PokemonInfoContainer>
         <img src={image} alt="pokemon_thumbnail" />
@@ -23,8 +36,9 @@ const PokemonCard = ({ name, image, types, randomAbility, weight }) => {
             </React.Fragment>
           ))}
         </Typography>
-        <Typography>ability: {randomAbility}</Typography>
+        <Typography>ability: {ability}</Typography>
         <Typography>weight: {weight}</Typography>
+        <Typography>height: {height}</Typography>
         </PokemonInfoContainer>
       </StyledCard>
     </CardContainer>
@@ -37,7 +51,8 @@ PokemonCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   weight: PropTypes.number.isRequired,
-  randomAbility: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
+  ability: PropTypes.string.isRequired,
   types: PropTypes.arrayOf(
     PropTypes.shape({
       slot: PropTypes.number,

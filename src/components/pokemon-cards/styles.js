@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 export const StyledCard = styled(Card)({
   padding: 16,
   width: 200,
-  height: 200,
+  height: 225,
 });
 
 export const PokemonInfoContainer = styled(Box)({
@@ -46,3 +46,12 @@ export const PokemonCardsFlexContainer = styled(Box)(({ theme }) => ({
     },
   },
 }));
+
+
+/*
+
+todo: just make each card width 100% instead of this justify stuff.
+but the white space shouldn't be 100%.
+you need a component underneath the 100% that is the width of the content that has a white background
+
+*/
