@@ -26,7 +26,7 @@ export const CardContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
-export const PokemonFlexContainer = styled(Box)(({theme}) => ({
+export const PokemonCardsFlexContainer = styled(Box)(({theme}) => ({
   display: 'flex',
   flexWrap: 'wrap',
   gap: 16,
@@ -35,7 +35,3 @@ export const PokemonFlexContainer = styled(Box)(({theme}) => ({
     width: '75%',
   }
 }));
-
-export const HeaderContainer = styled(Box)(({theme}) => {
-
-});

@@ -1,12 +1,12 @@
 import React from 'react';
 import usePokemonInfo from '../../hooks/usePokemonInfo';
 import PokemonCard from './PokemonCard';
-import { PokemonFlexContainer } from './styles';
+import { PokemonCardsFlexContainer } from './styles';
 
 const PokemonCards = () => {
   const pokemonInfo = usePokemonInfo();
   return (
-    <PokemonFlexContainer>
+    <PokemonCardsFlexContainer>
       {pokemonInfo.map(
         ({
           sprites: { front_default },
@@ -28,7 +28,7 @@ const PokemonCards = () => {
           />
         )
       )}
-    </PokemonFlexContainer>
+    </PokemonCardsFlexContainer>
   );
 };
 
