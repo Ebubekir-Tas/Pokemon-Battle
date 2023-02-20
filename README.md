@@ -1,8 +1,10 @@
 Decisions along the way:
+
 1: Custom Hooks for fetching API
   - Separation of concerns (extraction of business logic from UI)
   - Reliability and potential reusability
   - One fetch per hook (Single Responsibility Principle)
+  
 2: styled mui components over sx prop
   - Potential reusability of styled components
   - sx prop has it's place for single-use styles but this is better syntax than inline style-esque (in my opinion)
