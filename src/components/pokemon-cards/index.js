@@ -1,7 +1,7 @@
 import React from 'react';
 import usePokemonInfo from '../../hooks/usePokemonInfo';
 import PokemonCard from './PokemonCard';
-import { PokemonCardsFlexContainer } from './styles';
+import { PokemonCardsFlexContainer, CardContainer } from './styles';
 import PropTypes from "prop-types";
 
 const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) => {
@@ -35,7 +35,7 @@ const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) =>
               />
             );
           }
-          return <></>;
+          return <CardContainer />;
         }
       )}
     </PokemonCardsFlexContainer>

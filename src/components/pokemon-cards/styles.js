@@ -46,12 +46,3 @@ export const PokemonCardsFlexContainer = styled(Box)(({ theme }) => ({
     },
   },
 }));
-
-
-/*
-
-todo: just make each card width 100% instead of this justify stuff.
-but the white space shouldn't be 100%.
-you need a component underneath the 100% that is the width of the content that has a white background
-
-*/
