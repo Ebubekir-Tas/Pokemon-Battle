@@ -1,15 +1,23 @@
+# https://taspokemonbattle.netlify.app/
+
 Decisions along the way:
+
 1: Custom Hooks for fetching API
   - Separation of concerns (extraction of business logic from UI)
   - Reliability and potential reusability
   - One fetch per hook (Single Responsibility Principle)
+  
 2: styled mui components over sx prop
   - Potential reusability of styled components
   - sx prop has it's place for single-use styles but this is better syntax than inline style-esque (in my opinion)
-  - mui styled components makes it easier to separate reusable child components from parent components that consume child components (i.e child image inside the parent card)
+  - mui styled components makes it intuitive to separate reusable child components from parent components
+  
 3: PropTypes in absence of TypeScript
+  - App is small, not going to be built upon, pure convenience
 
 For sake of time didn't include:
+- More than options than pokemon 1-9 (i.e 11-19 not available)
+   - Would simply require a parameter for the urls to fetch from and evolution chains from the pokemon API for the pokemon battle logic
 - loading state for fetches (loading, success, onError, etc)
 - unit tests
 - TypeScript
