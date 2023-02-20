@@ -1,3 +1,9 @@
+/* 
+  Note: Going to assume battles between pokemon 1-9 for simplicity.
+    Evolution chains can be found with this API url: https://pokeapi.co/api/v2/evolution-chain/1/
+    but we will just hardcode evolution chain for simplicity and timesaving.
+*/
+
 import { useState } from 'react';
 
 const typeMatchups = {
