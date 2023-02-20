@@ -8,8 +8,10 @@ Decisions along the way:
 2: styled mui components over sx prop
   - Potential reusability of styled components
   - sx prop has it's place for single-use styles but this is better syntax than inline style-esque (in my opinion)
-  - mui styled components makes it easier to separate reusable child components from parent components that consume child components (i.e child image inside the parent card)
+  - mui styled components makes it intuitive to separate reusable child components from parent components
+  
 3: PropTypes in absence of TypeScript
+  - App is small, not going to be built upon, pure convenience
 
 For sake of time didn't include:
 - More than options than pokemon 1-9
