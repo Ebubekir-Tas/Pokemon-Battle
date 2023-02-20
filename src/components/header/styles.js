@@ -38,9 +38,11 @@ export const BattleButton = styled(Button)(({ theme }) => ({
   height: 56,
   width: 120,
   position: "relative",
-  marginRight: 16,
   [theme.breakpoints.up("md")]: {
     right: "-60px",
+  },
+  [theme.breakpoints.between('sm', 'md')]: {
+    marginRight: 16,
   },
   [theme.breakpoints.down("sm")]: {
     alignSelf: "center",
