@@ -1,11 +1,11 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import PropTypes from "prop-types";
-import { typeColor } from '../utils/colorByPokemonType'
+import { typeColor } from '../../utils/colorByPokemonType'
 import { PokemonInfoContainer, PokemonName, StyledCard, CardContainer } from './styles';
 
 const PokemonCard = ({ name, image, types, randomAbility, weight }) => {
-  const typeNames = types.map(type => type.type.name);
+  const namesOfTypes = types.map(type => type.type.name);
 
   const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
 
@@ -16,7 +16,7 @@ const PokemonCard = ({ name, image, types, randomAbility, weight }) => {
       <PokemonInfoContainer>
       <img src={image} alt="pokemon_thumbnail" />
       <Typography>
-        {typeNames.map((typeName, index) => (
+        {namesOfTypes.map((typeName, index) => (
           <React.Fragment key={typeName}>
             {index > 0 && ', '}
             <span style={{ color: typeColor(typeName) }}>{typeName}</span>
