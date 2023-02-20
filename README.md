@@ -1,3 +1,21 @@
+Decisions along the way:
+1: Custom Hooks for fetching API
+  - Separation of concerns (extraction of business logic from UI)
+  - Reliability and potential reusability
+  - One fetch per hook (Single Responsibility Principle)
+2: styled mui components over sx prop
+  - Potential reusability of styled components
+  - sx prop has it's place for single-use styles but this is better syntax than inline style-esque (in my opinion)
+  - mui styled components makes it easier to separate reusable child components from parent components that consume child components (i.e child image inside the parent card)
+3: PropTypes in absence of TypeScript
+
+For sake of time didn't include:
+- loading state for fetches (loading, success, error, etc)
+- error handling for fetching API
+- unit tests
+- TypeScript
+- etc...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

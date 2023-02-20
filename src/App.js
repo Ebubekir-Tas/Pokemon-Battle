@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import usePokemonInfo from "./hooks/usePokemonInfo";
+import PokemonCard from "./components/PokemonCard";
+import { PokemonFlexContainer } from './components/styles';
 function App() {
+  const pokemonInfo = usePokemonInfo();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <PokemonFlexContainer>
+        {pokemonInfo.map(
+          ({
+              sprites: { front_default },
+              name,
+              types,
+              weight,
+              abilities
+            }) => (
+            <PokemonCard
+              name={name}
+              image={front_default}
+              types={types}
+              weight={weight}
+              randomAbility={abilities[
+                Math.floor(Math.random() * abilities.length)
+              ].ability.name}
+            />
+          )
+        )}
+      </PokemonFlexContainer>
     </div>
   );
 }
