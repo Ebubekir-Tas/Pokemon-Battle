@@ -1,12 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { AttackAnimation, PokemonImg } from './styles';
+import { PokemonImg } from './styles';
 
-const SinglePokemon = ({ image }) => {
+const SinglePokemon = ({ image, index }) => {
   return (
-    <>
-      <PokemonImg src={image} alt="pokemon_thumbnail" />
-    </>
+    <PokemonImg
+      src={image}
+      alt="pokemon_thumbnail"
+      flipFirstPokemon={index === 0}
+    />
   );
 };
 

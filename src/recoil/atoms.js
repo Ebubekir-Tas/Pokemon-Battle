@@ -9,3 +9,8 @@ export const selectedPokemonState = atom({
   key: 'selectedPokemon',
   default: [],
 });
+
+export const isPokemonBattlingState = atom({
+  key: 'startBattle',
+  default: false,
+});
