@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import PokemonCards from "./components/pokemon-cards";
 import Header from './components/header';
+import BattleModal from './components/battle-modal';
 
 function App() {
   const [pokemonFilter, setPokemonFilter] = useState('');

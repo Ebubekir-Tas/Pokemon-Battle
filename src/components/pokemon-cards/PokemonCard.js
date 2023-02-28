@@ -13,7 +13,7 @@ const PokemonCard = ({ name, image, types, ability, weight, height, selectedPoke
     if (index !== -1) {
       setSelectedPokemon(selectedPokemon.filter((_, i) => i !== index));
     } else if (selectedPokemon.length < 2) {
-      setSelectedPokemon([...selectedPokemon, { name, type: types[0].type.name }]);
+      setSelectedPokemon([...selectedPokemon, { name, type: types[0].type.name, image: image }]);
     };
   };
 
