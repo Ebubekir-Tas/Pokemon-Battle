@@ -1,11 +1,14 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
+import { pokemonFilterState } from '../../recoil/atoms';
 import usePokemonInfo from '../../hooks/usePokemonInfo';
 import PokemonCard from './PokemonCard';
 import { PokemonCardsFlexContainer, CardContainer } from './styles';
 import PropTypes from "prop-types";
 
-const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) => {
+const PokemonCards = () => {
   const pokemonInfo = usePokemonInfo();
+  const [pokemonFilter] = useRecoilState(pokemonFilterState)
 
   return (
     <PokemonCardsFlexContainer container spacing={{ xs: 1, md: 3 }}>
@@ -27,8 +30,6 @@ const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) =>
                 types={types}
                 weight={weight}
                 height={height}
-                selectedPokemon={selectedPokemon}
-                setSelectedPokemon={setSelectedPokemon}
                 ability={
                   abilities[0].ability.name
                 }
@@ -43,9 +44,3 @@ const PokemonCards = ({ pokemonFilter, selectedPokemon, setSelectedPokemon }) =>
 };
 
 export default PokemonCards;
-
-PokemonCards.propTypes = {
-  pokemonFilter: PropTypes.string.isRequired,
-  selectedPokemon: PropTypes.array.isRequired,
-  setSelectedPokemon: PropTypes.func.isRequired,
-};

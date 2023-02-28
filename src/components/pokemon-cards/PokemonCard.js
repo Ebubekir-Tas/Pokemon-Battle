@@ -1,13 +1,15 @@
 import React from "react";
+import { useRecoilState } from 'recoil';
 import { Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import { typeColor } from '../../utils/colorByPokemonType'
 import { PokemonInfoContainer, PokemonName, StyledCard, CardContainer } from './styles';
+import { selectedPokemonState } from "../../recoil/atoms";
 
-const PokemonCard = ({ name, image, types, ability, weight, height, selectedPokemon, setSelectedPokemon }) => {
+const PokemonCard = ({ name, image, types, ability, weight, height }) => {
   const namesOfTypes = types.map(type => type.type.name);
   const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
-
+  const [selectedPokemon, setSelectedPokemon] = useRecoilState(selectedPokemonState)
   const handleCardClick = () => {
     const index = selectedPokemon.findIndex(pokemon => pokemon.name === name);
     if (index !== -1) {
@@ -16,6 +18,7 @@ const PokemonCard = ({ name, image, types, ability, weight, height, selectedPoke
       setSelectedPokemon([...selectedPokemon, { name, type: types[0].type.name, image: image }]);
     };
   };
+  console.log(selectedPokemon);
 
   const isSelected = selectedPokemon.some(pokemon => pokemon.name === name);
   const highlightSelectedCard = isSelected ? { boxShadow: '0 0 0 2px black, 0 0 0 5px gold' } : {};

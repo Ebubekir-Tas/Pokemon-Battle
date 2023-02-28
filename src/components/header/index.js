@@ -1,12 +1,15 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import { HeaderContainer, SearchPokemon, BattleButton } from './styles';
 import PropTypes from "prop-types";
 import usePokemonBattle from '../../hooks/usePokemonBattle';
 import { Typography } from '@mui/material';
+import { pokemonFilterState, selectedPokemonState } from '../../recoil/atoms';
 
-const Header = ({ pokemonFilter, setPokemonFilter, selectedPokemon }) => {
+const Header = () => {
   const [winner, determineWinner] = usePokemonBattle();
-
+  const [pokemonFilter, setPokemonFilter] = useRecoilState(pokemonFilterState)
+  const [selectedPokemon] = useRecoilState(selectedPokemonState)
   return (
     <>
       <HeaderContainer>
@@ -28,5 +31,4 @@ export default Header;
 Header.propTypes = {
   pokemonFilter: PropTypes.string.isRequired,
   setPokemonFilter: PropTypes.func.isRequired,
-  selectedPokemon: PropTypes.string.isRequired,
 };
