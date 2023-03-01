@@ -6,7 +6,7 @@ import { pokemonFilterState, selectedPokemonState, isPokemonBattlingState } from
 import usePokemonBattle from "../../hooks/usePokemonBattle";
 
 const Header = () => {
-  const [_, determineWinner] = usePokemonBattle();
+  const [ determineWinner] = usePokemonBattle();
   const [pokemonFilter, setPokemonFilter] = useRecoilState(pokemonFilterState);
   const [selectedPokemon] = useRecoilState(selectedPokemonState);
   const [, setIsPokemonBattling] = useRecoilState(isPokemonBattlingState);
