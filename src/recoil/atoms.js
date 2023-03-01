@@ -11,6 +11,11 @@ export const selectedPokemonState = atom({
 });
 
 export const isPokemonBattlingState = atom({
-  key: 'startBattle',
+  key: 'isPokemonBattling',
   default: false,
+});
+
+export const pokemonBattleWinnerState = atom({
+  key: 'pokemonBattleWinner',
+  default: '',
 });

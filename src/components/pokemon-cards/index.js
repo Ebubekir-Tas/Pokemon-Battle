@@ -4,7 +4,6 @@ import { pokemonFilterState } from '../../recoil/atoms';
 import usePokemonInfo from '../../hooks/usePokemonInfo';
 import PokemonCard from './PokemonCard';
 import { PokemonCardsFlexContainer, CardContainer } from './styles';
-import PropTypes from "prop-types";
 
 const PokemonCards = () => {
   const pokemonInfo = usePokemonInfo();

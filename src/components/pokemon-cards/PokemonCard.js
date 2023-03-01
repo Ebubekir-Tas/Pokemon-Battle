@@ -18,7 +18,6 @@ const PokemonCard = ({ name, image, types, ability, weight, height }) => {
       setSelectedPokemon([...selectedPokemon, { name, type: types[0].type.name, image: image }]);
     };
   };
-  console.log(selectedPokemon);
 
   const isSelected = selectedPokemon.some(pokemon => pokemon.name === name);
   const highlightSelectedCard = isSelected ? { boxShadow: '0 0 0 2px black, 0 0 0 5px gold' } : {};
