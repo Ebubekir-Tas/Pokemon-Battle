@@ -1,5 +1,14 @@
 # https://taspokemonbattle.netlify.app/
 
+![pokemonapp](https://user-images.githubusercontent.com/65694925/222018698-23bf5b26-2f3c-4aa2-9b37-1b6dd2ef2b94.gif)
+
+Rules:
+
+Primary type advantage wins, then evolution chain if same type.
+
+Type advantage chart: https://www.eurogamer.net/pokemon-go-type-chart-effectiveness-weaknesses
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
