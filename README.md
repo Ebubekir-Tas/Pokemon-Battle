@@ -2,7 +2,7 @@
 
 ![pokemonapp](https://user-images.githubusercontent.com/65694925/222018698-23bf5b26-2f3c-4aa2-9b37-1b6dd2ef2b94.gif)
 
-Rules:
+## Rules:
 
 Primary type advantage wins, then evolution chain if same type.
 
