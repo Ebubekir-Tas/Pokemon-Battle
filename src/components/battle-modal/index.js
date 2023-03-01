@@ -23,9 +23,9 @@ const BattleModal = () => {
     setSelectedPokemon([]);
     setIsPokemonBattling(false);
     setDisplayWinner(false);
-    setBattleWinner();
-  }
-
+    setBattleWinner('');
+  };
+  
   return (
     <Modal
       open={isPokemonBattling}
